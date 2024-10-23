@@ -1,3 +1,4 @@
+"use strict";
 //JavaScript Fundamentals – Part 1
 
 //Coding Challenge #1
