@@ -1,11 +1,11 @@
 /*
 function logger() {
   console.log("My name is Ana");
-}
-///////////////////////////////////////////////////////
+
 //calling / running / invoking function
 logger();
 logger();
+
 
 ///////////////////////////////////////////////////////
 function fruitProcessor(apples, oranges) {
@@ -52,6 +52,7 @@ const yearsUntilRetirement = (birthYear, firstName) => {
 console.log(yearsUntilRetirement(2003, "Ana"));
 
 
+///////////////////////////////////////////////////////
 function cutFruitPieces(fruit) {
   return fruit * 4;
 }
@@ -65,8 +66,10 @@ function fruitProcessor(apples, oranges) {
 }
 
 console.log(fruitProcessor(2, 3));
-*/
+}
 
+
+///////////////////////////////////////////////////////
 const calcAge = function (birthYear) {
   return 2024 - birthYear;
 };
@@ -94,3 +97,21 @@ console.log(ana);
 
 const ion = yearsUntilRetirement(2003, "Ion", "male");
 console.log(ion);
+
+
+///////////////////////////////////////////////////////
+*/
+
+const friend1 = "Ana";
+const friend2 = "Maria";
+const friend3 = "Diana";
+
+const friends = ["Ana", "Maria", "Diana"];
+console.log(friends);
+
+const years = new Array(2001, 2002, 2003);
+
+console.log(friends[0]);
+
+console.log(friends.length);
+console.log(friends[friends.length - 1]);

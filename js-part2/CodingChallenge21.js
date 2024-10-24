@@ -34,15 +34,15 @@ Apply this to the team's average scores 😉
 GOOD LUCK 😀
 */
 
+// const dolphinsScore = (44, 23, 71);
+// const koalasScore = (65, 54, 49);
+
+/* Write your code below. Good luck! 🙂 */
+
 const calcAverage = (score1, score2, score3) => (score1 + score2 + score3) / 3;
 
-// Data 1
-const avgDolphins1 = calcAverage(44, 23, 71);
-const avgKoalas1 = calcAverage(65, 54, 49);
-
-// Data 2
-const avgDolphins2 = calcAverage(85, 54, 41);
-const avgKoalas2 = calcAverage(23, 34, 27);
+const scoreDolphins = calcAverage(44, 23, 71);
+const scoreKoalas = calcAverage(65, 54, 49);
 
 const checkWinner = (avgDolphins, avgKoalas) => {
   if (avgDolphins >= 2 * avgKoalas) {
@@ -50,12 +50,13 @@ const checkWinner = (avgDolphins, avgKoalas) => {
   } else if (avgKoalas >= 2 * avgDolphins) {
     console.log(`Koalas win (${avgKoalas} vs. ${avgDolphins})`);
   } else {
-    console.log("No team wins!");
+    console.log("No team wins...");
   }
 };
 
-// Check for Data 1
-checkWinner(avgDolphins1, avgKoalas1);
+checkWinner(scoreDolphins, scoreKoalas);
 
-// Check for Data 2
-checkWinner(avgDolphins2, avgKoalas2);
+// scoreDolphins = calcAverage(85, 54, 41);
+// scoreKoalas = calcAverage(23, 34, 27);
+//
+// console.log(checkWinner(scoreDolphins, scoreKoalas));
