@@ -1,9 +1,7 @@
 //Coding Challenge #2
 
 /*
-Steven is still building his tip calculator, using the same rules as before: Tip 15% of
-the bill if the bill value is between 50 and 300, and if the value is different, the tip is
-20%.
+Steven is still building his tip calculator, using the same rules as before: Tip 15% of the bill if the bill value is between 50 and 300, and if the value is different, the tip is 20%.
 
 Your tasks:
 1. Write a function 'calcTip' that takes any bill value as an input and returns
@@ -23,3 +21,26 @@ values (so don't store the tip values in separate variables first, but right in 
 array) 😉
 GOOD LUCK 😀
 */
+
+//.push() .unshift() .pop() .shift() .indexOf() .includes()
+
+function calcTip(value) {
+  const tip = value >= 50 && value <= 300 ? 0.15 * value : 0.2 * value;
+  return tip;
+}
+
+//console.log(calcTip(100));
+
+const bills = [125, 555, 44];
+
+const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+
+//console.log(tips);
+
+const total = [
+  bills[0] + calcTip(bills[0]),
+  bills[1] + calcTip(bills[1]),
+  bills[2] + calcTip(bills[2]),
+];
+
+//console.log(total);
