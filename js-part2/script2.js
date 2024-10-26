@@ -156,6 +156,8 @@ friends.includes("Cristina")
   ? console.log("You have a friend called Cristina")
   : console.log("You dont have a friend called Cristina");
 
+
+  ///////////////////////////////////////////////////////
 //.push() .unshift() .pop() .shift() .indexOf() .includes()
 
 //Introduction to Objects
@@ -201,14 +203,112 @@ console.log(ana);
 console.log(
   `${ana.firstName} has ${ana.friends.length} friends, and her best friend is called ${ana.friends[0]}.`
 );
-*/
 
+///////////////////////////////////////////////////////
 //Object Methods
 
 const ana = {
   firstName: "Ana",
   lastName: "Orășanu",
-  age: 2024 - 2003,
+  birthYear: 2003,
   job: "web developer",
   friends: ["Stefan", "Alexandru", "Andrei"],
+  hasDriversLicense: true,
+
+  // calcAge: function (birthYear) {
+  //   return 2024 - birthYear;
+  // },
+
+  // calcAge: function () {
+  //   return 2024 - this.birthYear;
+  // },
+
+  calcAge: function () {
+    this.age = 2024 - this.birthYear;
+    return this.age;
+  },
+
+  getSummary: function () {
+    return `${this.firstName} is a ${this.calcAge()}-years old ${
+      ana.job
+    }, and she has ${this.hasDriversLicense ? "a" : "no"} driver's license.`;
+  },
 };
+
+console.log(ana.calcAge());
+// console.log(ana["calcAge"](2003));
+
+console.log(ana.age);
+
+//Challenge
+//"Ana is a 46-year old teacher, and he has a/no driver's license"
+
+console.log(ana.getSummary());
+
+///////////////////////////////////////////////////////
+const anaArray = [
+  "Ana",
+  "Orășanu",
+  2024 - 2003,
+  "web developer",
+  ["Stefan", "Alexandru", "Andrei"],
+  true,
+];
+
+const types = [];
+
+for (let i = 0; i < anaArray.length; i++) {
+  console.log(anaArray[i], typeof anaArray[i]);
+
+  //types[i] = typeof anaArray[i];
+  types.push(typeof anaArray[i]);
+}
+
+//for (let i = 0; i < anaArray.length; i++) {
+//  console.log(types[i]);
+//}
+
+console.log(types);
+
+const years = [1991, 2007, 1969, 2020];
+const ages = [];
+
+for (let i = 0; i < years.length; i++) {
+  ages.push(2024 - years[i]);
+}
+
+console.log(ages);
+
+//continue and break
+console.log("---ONLY STRINGS---");
+for (let i = 0; i < anaArray.length; i++) {
+  if (typeof anaArray[i] !== "string") continue;
+
+  console.log(anaArray[i], typeof anaArray[i]);
+}
+
+console.log("---BREAK WITH NUMBER---");
+for (let i = 0; i < anaArray.length; i++) {
+  if (typeof anaArray[i] === "number") break;
+
+  console.log(anaArray[i], typeof anaArray[i]);
+}
+
+///////////////////////////////////////////////////////
+*/
+
+// Math.random = generează un număr aleator între 0 (inclusiv) și 1 (exclusiv), cum ar fi 0.5 sau 0.9
+
+//Math.random() * 6 extinde acest interval între 0 și aproape 6 (exclusiv). Așa obții valori precum 0.5, 3.6, sau 5.9
+
+//Math.trunc() elimină partea zecimală a unui număr, păstrând doar partea întreagă.
+
+//+ 1 ajustează intervalul astfel încât să devină între 1 și 6.
+
+let dice = Math.trunc(Math.random() * 6) + 1;
+
+while (dice !== 6) {
+  console.log(`You rolled a ${dice}`);
+  dice = Math.trunc(Math.random() * 6) + 1;
+  if (dice === 6) console.log("Loop is about to end...");
+}
