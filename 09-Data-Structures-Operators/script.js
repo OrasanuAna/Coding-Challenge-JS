@@ -49,6 +49,39 @@ const restaurant = {
   },
 };
 
+const rest1 = {
+  name: 'Capricorn',
+  //numGuests: 20,
+  numGuests: 0,
+};
+
+const rest2 = {
+  name: 'La Piazza',
+  owner: 'C.A. Rosetti',
+};
+
+// OR assignment operator
+// rest1.numGuests = rest1.numGuests || 10; //20
+// rest2.numGuests = rest2.numGuests || 10; //10
+// rest1.numGuests ||= 10;
+// rest2.numGuests ||= 10;
+
+// nullish assignment operator (null or undefined)
+rest1.numGuests ??= 10;
+rest2.numGuests ??= 10;
+
+// AND assignment operator
+// rest1.owner = rest1.owner && '<ANONTMUS>';
+// rest2.owner = rest2.owner && '<ANONTMUS>';
+rest1.owner &&= '<ANONTMUS>';
+rest2.owner &&= '<ANONTMUS>';
+
+console.log(rest1);
+console.log(rest2);
+
+/*
+////////////////////////////////////////////////////////////////
+// The Nullish Coalescing Operator
 restaurant.numGuests = 0;
 const guests = restaurant.numGuests || 10;
 console.log(guests);
@@ -57,7 +90,7 @@ console.log(guests);
 const guestCorrect = restaurant.numGuests ?? 10;
 console.log(guestCorrect);
 
-/*
+
 ////////////////////////////////////////////////////////////////
 // Short Circuiting (&& and ||)
 console.log('---- OR ----');
