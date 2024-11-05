@@ -49,6 +49,20 @@ const restaurant = {
   },
 };
 
+/*
+////////////////////////////////////////////////////////////////
+// The for-of Loop
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+for (const item of menu) console.log(item);
+
+for (const [i, el] of menu.entries()) {
+  console.log(`${i + 1}:${el}`);
+}
+
+//console.log([...menu.entries()]);
+
+////////////////////////////////////////////////////////////////
 const rest1 = {
   name: 'Capricorn',
   //numGuests: 20,
@@ -79,7 +93,6 @@ rest2.owner &&= '<ANONTMUS>';
 console.log(rest1);
 console.log(rest2);
 
-/*
 ////////////////////////////////////////////////////////////////
 // The Nullish Coalescing Operator
 restaurant.numGuests = 0;
