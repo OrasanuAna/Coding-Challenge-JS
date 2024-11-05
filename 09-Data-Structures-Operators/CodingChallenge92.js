@@ -299,5 +299,66 @@ printBookInfo({ title: 'Algorithms', author: 'Robert Sedgewick' });
 */
 
 // ---------- 3.The Spread Operator ----------
-//3.1
+// 3.1
 //Each book object has the author property, which stores an array of strings (author names) if there are multiple authors, or a single string (author name) if there is just one author. Declare an array called bookAuthors, and fill it with authors of the first two books from the books array. The bookAuthors array should have just one level (no nested arrays).
+const bookAuthors = [...books[0].author, ...books[1].author];
+//console.log(bookAuthors);
+//['Robert Sedgewick', 'Kevin Wayne','Harold Abelson','Gerald Jay Sussman','Julie Sussman (Contributor)']
+
+// 3.2
+// Write a function called spellWord that accepts a single string as an argument. This function should log to the console each letter of the argument separated by a space.
+function spellWord(word) {
+  return console.log(...word);
+}
+//spellWord('JavaScript');
+
+// ---------- 4.Rest Pattern and Parameters ----------
+// 4.1
+// Destructure the keywords property (array) of the first book from the books array into variables called mainKeyword and rest. The first keyword should be assigned to mainKeyword, and the rest of the keywords should be assigned to the rest variable (it should be an array).
+const [mainKeyword, ...rest] = books[0].keywords;
+
+// 4.2
+// Destructure the second book from the books array into a variable called bookPublisher. The bookPublisher variable should be assigned with the value of the publisher property of the book object. Assign the rest of the properties to the restOfTheBook variable.
+const { publisher: bookPublisher, ...restOfTheBook } = books[1];
+
+// 4.3
+// Write a function called printBookAuthorsCount that has two parameters called title and authors. The authors parameter should accept any number of arguments. This function should log to the console a string formatted like that: "The book "${title}" has ${authors.length} authors".
+function printBookAuthorsCount(title, ...authors) {
+  return console.log(`The book "${title}" has ${authors.length} authors`);
+}
+//printBookAuthorsCount('Algorithms', 'Robert Sedgewick', 'Kevin Wayne');
+
+// ---------- 5.Short Circuiting (&& and ||) ----------
+// 5.1
+// Some of the book objects have the programmingLanguage property, which specifies what programming language is used in the book. Write a function called hasExamplesInJava that takes a book object from the books array as an argument. This function should return true if the book uses Java, or a string 'no data available' if it uses other language or no programming language at all.
+function hasExamplesInJava(book) {
+  return book.programmingLanguage === 'Java' || 'no data available';
+}
+// hasExamplesInJava(books[0]);
+// hasExamplesInJava(books[1]);
+
+// 5.2
+// Some of the book objects have the onlineContent property, which is either true or false. Loop over the books array, and for the books that provide online content, log to the console a string in this format: "${title}" provides online content. Use short-circuiting.
+for (let i = 0; i < books.length; i++) {
+  books[i].onlineContent &&
+    console.log(`"${books[i].title}" provides online content`);
+}
+
+// ---------- 6.The Nullish Coalescing Operator (??) ----------
+// 6.1
+// There are objects in the books array that don't have the onlineContent property at all. Loop over the books array, and log a string to the console in this format: "${title}" provides no data about its online content.
+for (let i = 0; i < books.length; i++) {
+  books[i].onlineContent ??
+    console.log(`"${books[i].title}" provides online content`);
+}
+
+// ---------- 7.Logical Assignments Operators ----------
+// 7.1
+// Some of the book objects from the books array are missing the edition property. Loop over the books array, and assign this property with a number 1 (if it doesn't already exist). Use logical assignment operators.
+
+// 7.2
+// Some of the book objects from the books array have the highlighted property, which by default is set to true. Iterate over the books array, and if the thirdParty.goodreads.rating property is less than 4.2, reassign it with false. Use the &&= operator (tip: you may also need the ! operator)
+
+// ---------- 8.Looping Arrays: The for-of Loop ----------
+// 8.1
+// Use the for-of loop to loop over the books array and sum the pages of all books. Use the pageSum variable below, and the pages property of the book objects.
