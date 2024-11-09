@@ -54,6 +54,8 @@ const restaurant = {
   },
 };
 
+/*
+////////////////////////////////////////////////////////////////
 const question = new Map([
   ['question', 'What is the best programming language in the word?'],
   [1, 'C'],
@@ -89,7 +91,7 @@ console.log([...question]);
 console.log([...question.keys()]);
 console.log([...question.values()]);
 
-/*
+
 ////////////////////////////////////////////////////////////////
 // Maps: Fundamentals
 const rest = new Map();
