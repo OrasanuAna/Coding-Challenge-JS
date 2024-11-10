@@ -54,6 +54,47 @@ const restaurant = {
   },
 };
 
+const airline = 'TAP Air Portugal';
+const plane = 'A320';
+
+console.log(plane[0]); // A
+console.log(plane[1]); // 3
+console.log(plane[2]); // 2
+console.log('B737'[0]); // B
+
+console.log(airline.length); // 16
+console.log('B737'.length); // 4
+
+console.log(airline.indexOf('r')); // 6
+console.log(airline.lastIndexOf('r')); // 10
+console.log(airline.indexOf('portugal')); // -1
+
+console.log(airline.slice(4)); // Air Portugal
+console.log(airline.slice(4, 7)); // Air
+
+console.log(airline.slice(0, airline.indexOf(' '))); // Air
+console.log(airline.slice(airline.lastIndexOf(' ') + 1)); // TAP
+
+console.log(airline.slice(-2)); // al
+console.log(airline.slice(1, -1)); // AP Air Portuga
+
+const checkMiddleSeat = function (seat) {
+  // B and E are middle seats
+  const s = seat.slice(-1);
+  s === 'B' || s === 'E'
+    ? console.log('You got the middle seat')
+    : console.log('Not middle seat');
+};
+
+checkMiddleSeat('11B');
+checkMiddleSeat('23C');
+checkMiddleSeat('3E');
+
+console.log(new String('Ana'));
+console.log(typeof new String('Ana'));
+
+console.log(typeof new String('Ana').slice(1));
+
 /*
 ////////////////////////////////////////////////////////////////
 const question = new Map([
