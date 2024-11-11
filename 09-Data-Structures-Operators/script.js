@@ -54,6 +54,10 @@ const restaurant = {
   },
 };
 
+/*
+////////////////////////////////////////////////////////////////
+// Working With Strings - Part 3
+
 // Split and join
 console.log('a+very+nice+string'.split('+'));
 console.log('Orasanu Ana Maria'.split(' '));
@@ -102,7 +106,7 @@ planesInLine(5);
 planesInLine(3);
 planesInLine(25);
 
-/*
+
 ////////////////////////////////////////////////////////////////
 // Working With Strings - Part 2
 const airline = 'TAP Air Portugal';
