@@ -61,7 +61,7 @@ const newPassport = function (person) {
 
 newPassport(ana);
 checkIn(flight, ana);
-*/
+
 
 const oneWord = function (str) {
   return str.replace(/ /g, '').toLowerCase();
@@ -91,3 +91,21 @@ const high5 = function () {
 document.body.addEventListener('click', high5);
 
 ['Ana', 'Maria', 'Cristina'].forEach(high5);
+*/
+
+const greet = function (greeting) {
+  return function (name) {
+    console.log(`${greeting} ${name}`);
+  };
+};
+
+const greeterHey = greet('Hey');
+greeterHey('Ana');
+greeterHey('Maria');
+
+greet('Hello')('Ana');
+
+// Challenge
+const greetArr = greeting => name => console.log(`${greeting} ${name}`);
+
+greetArr('Hi')('Ana');
